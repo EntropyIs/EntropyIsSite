@@ -72,17 +72,10 @@ input, select, textarea {
 	appearance: none;
 }
 
-div .youtube {
-	position: relative;
-	overflow: hidden;
+.youtube iframe {
 	width: 100%;
-	padding-top: 56.25%;
-}
-
-iframe .youtube-iframe {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+	height:unset;
+	aspect-ratio: 16 / 9;
 }
 
 /* Basic */
