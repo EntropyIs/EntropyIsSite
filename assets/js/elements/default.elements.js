@@ -45,17 +45,24 @@ $("<ul>", {
 }).appendTo("#footer-inner");
 
 // External Links (Footer)
-var extLinks = []
-extLinks.push(`<a href="https://www.youtube.com/@entropy-is"><i class="fa-brands fa-youtube"></i></a>`)
-extLinks.push(`<a href="https://x.com/entorpyis"><i class="fa-brands fa-x-twitter"></i></a>`)
-extLinks.push(`<a href="https://store.steampowered.com/search/?developer=Entropy%20Is%20Software%20Development"><i class="fa-brands fa-steam"></i></a>`)
-extLinks.push(`<a href="https://github.com/EntropyIs"><i class="fa-brands fa-github"></i></a>`)
-extLinks.push(`<a href="https://entropyis.itch.io"><i class="fa-brands fa-itch-io"></i></a>`)
+$.getJSON(`assets/data/links.json`, function(link_data){
+    var extLinks = []
 
-$.each(extLinks, function(index, link){
-    $("<li>", {
-        html : link
-    }).appendTo("#ext-links");
+    $.each(link_data.social_links, function(index, link){
+        extLinks.push(`<a href="` + link.href + `"><i class="` + link.icon + `"></i> ` + link.description + `</a>`);
+    })
+
+    $.each(link_data.other_links, function(index, link){
+        extLinks.push(`<a href="` + link.href + `"><i class="` + link.icon + `"></i> ` + link.description + `</a>`);
+    })
+
+    console.log(extLinks)
+
+    $.each(extLinks, function(index, link){
+        $("<li>", {
+            html : link
+        }).appendTo("#ext-links");
+    });
 });
 
 // Copyright Lines (Footer)

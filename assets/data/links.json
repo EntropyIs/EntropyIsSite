@@ -1,0 +1,58 @@
+{
+    "social_links": [
+        {
+            "platform": "youtube",
+            "description": "Youtube",
+            "href": "https://www.youtube.com/@entropy-is",
+            "tag_main": "@entropy-is",
+            "tags": [
+                "@entropy-is"
+
+            ],
+            "icon": "fa-brands fa-youtube"
+        },
+        {
+            "platform": "x_twitter",
+            "description": "x.com",
+            "href": "https://x.com/entropyis_me",
+            "tag_main": "@entropyis_me",
+            "tags": [
+                "#entropyis",
+                "#escapethekreegan"
+            ],
+            "icon": "fa-brands fa-x-twitter"
+        }
+    ],
+    "other_links": [
+        {
+            "platform": "github",
+            "description": "GitHub",
+            "href": "https://github.com/EntropyIs",
+            "tag_main": "",
+            "tags": [
+                ""
+            ],
+            "icon": "fa-brands fa-github"
+        },
+        {
+            "platform": "steam",
+            "description": "Steam",
+            "href": "https://store.steampowered.com/search/?developer=Entropy%20Is%20Software%20Development",
+            "tag_main": "",
+            "tags": [
+                ""
+            ],
+            "icon": "fa-brands fa-steam"
+        },
+        {
+            "platform": "itch_io",
+            "description": "itch.io",
+            "href": "https://entropyis.itch.io",
+            "tag_main": "",
+            "tags": [
+                ""
+            ],
+            "icon": "fa-brands fa-itch-io"
+        }
+    ]
+}
