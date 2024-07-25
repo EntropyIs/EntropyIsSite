@@ -17,11 +17,20 @@ $("<a>", {
 }).appendTo("#header");
 
 // Navigation Links
-var navLinks = []
-navLinks.push(`<a href="index.html">Home</a>`)
+var navLinks = [];
+navLinks.push(`<a href="index.html">Home</a>`);
+navLinks.push(
+    `<div href="javascript:void(0)" class="menu_dropdown">` +
+        `<a class="menu_dropdown-button"><i class="fa-solid fa-bars"></i> Presskit</a>` +
+        `<div class="menu_dropdown-content">` +
+            `<a href="press_kit/project_kreegan.html">Project Kreegan</a>` +
+        `</div>` +
+    `</div>`
+    );
 
 $("<nav>", {
-    html : navLinks.join( " | " )
+    html : navLinks.join( " | " ),
+    class : "menu"
 }).appendTo("#header");
 
 
@@ -46,7 +55,7 @@ $("<ul>", {
 
 // External Links (Footer)
 $.getJSON(`assets/data/links.json`, function(link_data){
-    var extLinks = []
+    var extLinks = [];
 
     $.each(link_data.social_links, function(index, link){
         extLinks.push(`<a href="` + link.href + `"><i class="` + link.icon + `"></i> ` + link.description + `</a>`);
