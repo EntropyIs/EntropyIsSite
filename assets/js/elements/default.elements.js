@@ -17,21 +17,71 @@ $("<a>", {
 }).appendTo("#header");
 
 // Navigation Links
-var navLinks = [];
-navLinks.push(`<a href="index.html">Home</a>`);
-navLinks.push(
-    `<div href="javascript:void(0)" class="menu_dropdown">` +
-        `<a class="menu_dropdown-button"><i class="fa-solid fa-bars"></i> Presskit</a>` +
-        `<div class="menu_dropdown-content">` +
-            `<a href="press_kit/project_kreegan.html">Project Kreegan</a>` +
-        `</div>` +
-    `</div>`
-    );
+function pharse_page(page, parent)
+{
+    var element = "";
 
-$("<nav>", {
-    html : navLinks.join( " | " ),
-    class : "menu"
-}).appendTo("#header");
+    // Add Dropdown Code if Child Pages Exist
+    if (page.pages.length > 0){
+        element += `<div class="menu_dropdown">`;
+    }
+
+    if (page.is_page || page.pages.length > 0){
+        element += `<a href="`
+    }
+
+    if (parent != null){
+        element += parent + "/";
+    }
+    
+    if (page.is_page){
+            element += page.href_file + page.href_ext +`"`;
+    } else if (page.pages.length > 0){
+        element += `javascript:void(0)`;
+    }
+    
+    if (page.pages.length > 0){
+        element += ` class="menu_dropdown-button"`;
+    }
+
+    if (page.is_page || page.pages.length > 0){
+        element += ">";
+    }
+    
+    if (page.pages.length > 0){
+        element += `<i class="fa-solid fa-bars"></i> `;
+    }
+
+    if (page.is_page || page.pages.length > 0){
+        element += page.link_description + "</a>";
+    }
+
+    if (page.pages.length > 0){
+        element += `<div class="menu_dropdown-content">`;
+        $.each(page.pages, function(index, child){
+            element += pharse_page(child, page.href_file)
+        });
+        element += `</div></div>`;
+    }
+    return element;
+}
+
+$.getJSON(`assets/data/site_map.json`, function(map_data){
+    var navLinks = [];
+
+    $.each(map_data.pages, function(index, page){
+        var nav_link = pharse_page(page, null);
+        console.log(nav_link);
+        navLinks.push(nav_link);
+    });
+
+    console.log(navLinks)
+
+    $("<nav>", {
+        html : navLinks.join( " | " ),
+        class : "menu"
+    }).appendTo("#header");
+});
 
 
 /**

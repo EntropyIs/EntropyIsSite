@@ -24,28 +24,9 @@
                     "link_description": "Project Kreegan",
                     "is_page": true,
                     "pages": [
-                        {
-                            "href_file": "playbook",
-                            "href_ext": ".html",
-                            "title": "Project Kreegan - Playbook - Entropy Is",
-                            "link_description": "Playbook",
-                            "is_page": true,
-                            "pages": [
-                        
-                            ]
-                        }
+
                     ]
                 }
-            ]
-        },
-        {
-            "href_file": "",
-            "href_ext": "",
-            "title": "",
-            "link_description": "",
-            "is_page": false,
-            "pages": [
-        
             ]
         }
     ]
