@@ -128,7 +128,7 @@ $.getJSON(`assets/data/links.json`, function(link_data){
 var copyrightLines = [];
 copyrightLines.push(`&copy; Copyright 2024, Entropy Is Software Development. All rights reserved.`);
 copyrightLines.push(`Design: <a href="http://html5up.net">HTML5 UP</a>`);
-copyrightLines.push(`<a href="#">Privacy Policy</a>`);
+copyrightLines.push(`<a href="privacy-policy.html">Privacy Policy</a>`);
 
 $.each(copyrightLines, function(index, line){
     $("<li>", {
