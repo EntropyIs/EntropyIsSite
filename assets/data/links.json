@@ -53,6 +53,16 @@
                 ""
             ],
             "icon": "fa-brands fa-itch-io"
+        },
+        {
+            "platform": "discord",
+            "description": "Discord",
+            "href": "http://discord.gg/78XV5azaDw",
+            "tag_main": "",
+            "tags": [
+                ""
+            ],
+            "icon": "fa-brands fa-discord"
         }
     ]
 }
